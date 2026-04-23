@@ -2,7 +2,7 @@
 //  lib/constants.ts  — single source of truth
 // ─────────────────────────────────────────────
 
-export const VERSION      = "v1.0.6";
+export const VERSION      = "v2.3.1";
 export const RELEASE_DATE = "April 21, 2026";
 export const REPO         = "https://github.com/RamnarayanMandal/video-recorder-studio";
 export const RELEASES_URL = `${REPO}/releases/tag/${VERSION}`;
