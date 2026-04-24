@@ -2,7 +2,7 @@
 //  lib/constants.ts  — single source of truth
 // ─────────────────────────────────────────────
 
-export const VERSION      = "v2.3.3";
+export const VERSION      = "v2.3.5";
 export const RELEASE_DATE = "April 24, 2026";
 export const REPO         = "https://github.com/RamnarayanMandal/video-recorder-studio";
 export const RELEASES_URL = `${REPO}/releases/tag/${VERSION}`;
@@ -28,8 +28,8 @@ export const PLATFORMS: Record<PlatformKey, Platform> = {
     ext:   ".exe",
     color: "#3b9eff",
     hint:  "Windows 10 / 11 · 64-bit",
-    file:  "video-recorder-studio.Setup.1.0.0.exe",
-    size:  "~85 MB",
+    file:  "Video.Recorder.Studio.Setup.2.3.0.exe",
+    size:  "~94 MB",
   },
   mac: {
     label: "macOS",
@@ -37,8 +37,8 @@ export const PLATFORMS: Record<PlatformKey, Platform> = {
     ext:   ".dmg",
     color: "#a8b8c8",
     hint:  "macOS 12+ · Apple Silicon (arm64)",
-    file:  "video-recorder-studio-1.0.0-arm64.dmg",
-    size:  "~92 MB",
+    file:  "Video.Recorder.Studio-2.3.0-arm64.dmg",
+    size:  "~109 MB",
   },
   linux: {
     label: "Linux",
@@ -46,8 +46,8 @@ export const PLATFORMS: Record<PlatformKey, Platform> = {
     ext:   ".AppImage",
     color: "#f59e0b",
     hint:  "Ubuntu 20.04+ / Debian 11+ / Fedora 35+",
-    file:  "video-recorder-studio-1.0.0.AppImage",
-    size:  "~88 MB",
+    file:  "Video.Recorder.Studio-2.3.0.AppImage",
+    size:  "~130 MB",
   },
 };
 
@@ -89,6 +89,8 @@ export const CHANGELOG: ChangelogItem[] = [
   { e:"🔴", t:"REC indicator + live timer added to overlay" },
   { e:"🚀", t:"Significantly reduced preview lag" },
   { e:"🧹", t:"Better cleanup after recording stops — no ghost processes" },
+  { e:"🛠️", t:"Fixed ffmpeg.dll not found error on Windows (asar unpack fix)" },
+  { e:"📦", t:"Improved ffmpeg binary path resolution on all platforms" },
 ];
 
 // ── Tech Stack ───────────────────────────────
