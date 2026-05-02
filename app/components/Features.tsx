@@ -1,5 +1,6 @@
 // components/Features.tsx
 import { FEATURES } from "./lib/constants";
+import { FeatureIcon } from "./icons/Icons";
 
 export default function Features() {
   return (
@@ -44,8 +45,21 @@ export default function Features() {
               onMouseEnter={(e) => { e.currentTarget.style.background = "#13151f"; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "#0f1015"; }}
             >
-              <div aria-hidden="true" style={{ fontSize:"24px", marginBottom:"10px" }}>
-                {f.icon}
+              <div
+                aria-hidden="true"
+                style={{
+                  width: "42px",
+                  height: "42px",
+                  display: "grid",
+                  placeItems: "center",
+                  color: "#f87171",
+                  background: "rgba(239,68,68,.08)",
+                  border: "1px solid rgba(239,68,68,.18)",
+                  borderRadius: "10px",
+                  marginBottom: "12px",
+                }}
+              >
+                <FeatureIcon icon={f.icon} />
               </div>
               <h3 style={{ fontSize:"14px", fontWeight:700, marginBottom:"6px" }}>
                 {f.title}

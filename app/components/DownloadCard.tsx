@@ -1,15 +1,16 @@
 // components/DownloadCard.tsx
 "use client";
-import { DownloadIcon, ArrowIcon } from "./icons/Icons";
-import { PLATFORMS, DL_BASE, REPO } from "./lib/constants";
-import type { PlatformKey } from "./lib/constants";
+import { DownloadIcon, ArrowIcon, PlatformIcon } from "./icons/Icons";
+import type { PlatformKey, ReleaseData } from "./lib/constants";
 
 interface Props {
   os:          string;
   onDownload:  (key: string) => void;
+  release: ReleaseData;
 }
 
-export default function DownloadCard({ os, onDownload }: Props) {
+export default function DownloadCard({ os, onDownload, release }: Props) {
+  const { PLATFORMS, REPO, VERSION, RELEASE_DATE } = release;
   const pOS     = os !== "unknown" ? os : "windows";
   const primary = PLATFORMS[pOS as PlatformKey];
   const others  = (Object.keys(PLATFORMS) as PlatformKey[]).filter((k) => k !== pOS);
@@ -72,7 +73,9 @@ export default function DownloadCard({ os, onDownload }: Props) {
               fontWeight:   600,
             }}
           >
-            <span aria-hidden="true">{primary.icon}</span>
+            <span aria-hidden="true" style={{ color: primary.color, display: "grid", placeItems: "center" }}>
+              <PlatformIcon platform={primary.icon} size={17} />
+            </span>
             <span>{primary.label}</span>
             {os !== "unknown" && (
               <span
@@ -186,7 +189,9 @@ export default function DownloadCard({ os, onDownload }: Props) {
                 e.currentTarget.style.transform     = "none";
               }}
             >
-              <span aria-hidden="true" style={{ fontSize:"18px", flexShrink:0 }}>{PLATFORMS[k].icon}</span>
+              <span aria-hidden="true" style={{ color: PLATFORMS[k].color, display: "grid", placeItems: "center", flexShrink: 0 }}>
+                <PlatformIcon platform={PLATFORMS[k].icon} size={18} />
+              </span>
               <span>
                 <div style={{ fontSize:"12px", fontWeight:700 }}>{PLATFORMS[k].label}</div>
                 <div style={{ fontSize:"10px", color:"#6b7280", fontFamily:"var(--font-mono)", marginTop:"1px" }}>{PLATFORMS[k].ext}</div>
@@ -244,8 +249,8 @@ export default function DownloadCard({ os, onDownload }: Props) {
           }}
         >
           {[
-            { k: "Version",  v: "v1.0.6"      },
-            { k: "Released", v: "Apr 21 2026"  },
+            { k: "Version",  v: VERSION      },
+            { k: "Released", v: RELEASE_DATE  },
             { k: "License",  v: "MIT"          },
           ].map((m) => (
             <div key={m.k}>

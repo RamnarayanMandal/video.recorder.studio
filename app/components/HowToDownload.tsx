@@ -1,8 +1,10 @@
 // components/HowToDownload.tsx
-import { PLATFORMS, type PlatformKey, RELEASES_URL } from "./lib/constants";
+import type { PlatformKey, ReleaseData } from "./lib/constants";
+import { PlatformIcon } from "./icons/Icons";
 
 interface Props {
   onDownload: (key: string) => void;
+  release: ReleaseData;
 }
 
 const STEPS: Array<{ title: string; desc: string }> = [
@@ -23,7 +25,9 @@ const STEPS: Array<{ title: string; desc: string }> = [
 const YT_VIDEO_ID = "AiGjLZIduY8";
 const YT_START_SECONDS = 141;
 
-export default function HowToDownload({ onDownload }: Props) {
+export default function HowToDownload({ onDownload, release }: Props) {
+  const { PLATFORMS, RELEASES_URL } = release;
+
   return (
     <section className="vrs-section" id="how-to-download" aria-labelledby="howto-heading">
       <div className="vrs-container">
@@ -90,7 +94,9 @@ export default function HowToDownload({ onDownload }: Props) {
                     aria-label={`Download for ${p.label} (${p.file})`}
                   >
                     <span className="vrs-howto-btnLeft">
-                      <span className="vrs-howto-ico" aria-hidden="true">{p.icon || "💻"}</span>
+                      <span className="vrs-howto-ico" aria-hidden="true">
+                        <PlatformIcon platform={p.icon} size={18} />
+                      </span>
                       <span>
                         <span className="vrs-howto-btnTitle">{p.label}</span>
                         <span className="vrs-howto-btnMeta">{p.file}</span>

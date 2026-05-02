@@ -1,7 +1,9 @@
-import { VERSION } from "./lib/constants";
+interface Props {
+  version: string;
+}
 
 
-export default function AppMock() {
+export default function AppMock({ version }: Props) {
   return (
     <section
       aria-label="App interface preview"
@@ -39,7 +41,7 @@ export default function AppMock() {
               <span
                 style={{ fontFamily:"var(--font-mono)", fontSize:11, marginLeft:8, color:"#6b7280" }}
               >
-                Video Recorder Studio — {VERSION}
+                Video Recorder Studio - {version}
               </span>
             </div>
 

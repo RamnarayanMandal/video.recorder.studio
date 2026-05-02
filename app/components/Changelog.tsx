@@ -1,7 +1,13 @@
 // components/Changelog.tsx
-import { CHANGELOG, VERSION, RELEASE_DATE, RELEASES_URL } from "./lib/constants";
+import type { ReleaseData } from "./lib/constants";
 
-export default function Changelog() {
+interface Props {
+  release: ReleaseData;
+}
+
+export default function Changelog({ release }: Props) {
+  const { VERSION, RELEASE_DATE, RELEASES_URL, CHANGELOG } = release;
+
   return (
     <section
       id="changelog"

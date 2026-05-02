@@ -1,14 +1,15 @@
 // components/Hero.tsx
 "use client";
 import DownloadCard from "./DownloadCard";
-import { TECH, VERSION, RELEASE_DATE } from "./lib/constants";
+import { TECH, type ReleaseData } from "./lib/constants";
 
 interface Props {
   os:         string;
   onDownload: (key: string) => void;
+  release: ReleaseData;
 }
 
-export default function Hero({ os, onDownload }: Props) {
+export default function Hero({ os, onDownload, release }: Props) {
   return (
     <section
       className="vrs-section"
@@ -29,7 +30,7 @@ export default function Hero({ os, onDownload }: Props) {
             {/* Version badge */}
             <p
               className="fade-up"
-              aria-label={`Latest release: ${VERSION}, ${RELEASE_DATE}`}
+              aria-label={`Latest release: ${release.VERSION}, ${release.RELEASE_DATE}`}
               style={{
                 display:       "inline-flex",
                 alignItems:    "center",
@@ -50,7 +51,7 @@ export default function Hero({ os, onDownload }: Props) {
                 aria-hidden="true"
                 style={{ width:7, height:7, borderRadius:"50%", background:"#ef4444", flexShrink:0 }}
               />
-              Latest · {VERSION} · {RELEASE_DATE}
+              Latest - {release.VERSION} - {release.RELEASE_DATE}
             </p>
 
             {/* H1 */}
@@ -176,7 +177,7 @@ export default function Hero({ os, onDownload }: Props) {
           </div>
 
           {/* ── Download Card ─────────────────────────────────────────────── */}
-          <DownloadCard os={os} onDownload={onDownload} />
+          <DownloadCard os={os} onDownload={onDownload} release={release} />
         </div>
       </div>
 

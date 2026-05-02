@@ -1,15 +1,17 @@
 // components/DownloadSection.tsx
 "use client";
-import { PLATFORMS, REPO, DL_BASE } from "./lib/constants";
-import type { PlatformKey } from "./lib/constants";
-import { DownloadIcon } from "./icons/Icons";
+import type { PlatformKey, ReleaseData } from "./lib/constants";
+import { DownloadIcon, PlatformIcon } from "./icons/Icons";
 
 interface Props {
   os:         string;
   onDownload: (key: string) => void;
+  release: ReleaseData;
 }
 
-export default function DownloadSection({ os, onDownload }: Props) {
+export default function DownloadSection({ os, onDownload, release }: Props) {
+  const { PLATFORMS, REPO } = release;
+
   return (
     <section
       id="download"
@@ -79,7 +81,22 @@ export default function DownloadSection({ os, onDownload }: Props) {
                   </div>
                 )}
 
-                <div aria-hidden="true" style={{ fontSize:"34px", marginBottom:"13px" }}>{d.icon}</div>
+                <div
+                  aria-hidden="true"
+                  style={{
+                    width: "46px",
+                    height: "46px",
+                    display: "grid",
+                    placeItems: "center",
+                    color: ac,
+                    background: `${ac}14`,
+                    border: `1px solid ${ac}30`,
+                    borderRadius: "12px",
+                    marginBottom: "13px",
+                  }}
+                >
+                  <PlatformIcon platform={d.icon} size={30} />
+                </div>
                 <h3 style={{ fontSize:"20px", fontWeight:800, letterSpacing:"-.03em", marginBottom:"4px" }}>
                   {d.label}
                 </h3>
