@@ -1,5 +1,6 @@
 // components/Navbar.tsx
-import { PlayIcon, GitHubIcon } from "./icons/Icons";
+import Image from "next/image";
+import { GitHubIcon } from "./icons/Icons";
 import { REPO } from "./lib/constants";
 
 const NAV_LINKS = ["Features", "Changelog", "Download"] as const;
@@ -24,7 +25,7 @@ export default function Navbar() {
             display:       "flex",
             alignItems:    "center",
             justifyContent:"space-between",
-            height:        "58px",
+            height:        "72px",
             maxWidth:      "1200px",
             margin:        "0 auto",
             padding:       "0 16px",
@@ -46,22 +47,32 @@ export default function Navbar() {
             <div
               aria-hidden="true"
               style={{
-                width:      "34px",
-                height:     "34px",
-                borderRadius:"9px",
+                width:      "54px",
+                height:     "54px",
+                borderRadius:"14px",
                 flexShrink: 0,
-                background: "linear-gradient(135deg,#ef4444,#f97316)",
+                background: "rgba(255,255,255,0.04)",
+                border:     "1px solid rgba(255,255,255,0.10)",
                 display:    "grid",
                 placeItems: "center",
+                overflow:   "hidden",
                 boxShadow:  "0 4px 14px rgba(239,68,68,.3)",
               }}
             >
-              <PlayIcon />
+              <Image
+                src="/logo.png"
+                alt=""
+                width={54}
+                height={54}
+                priority
+                sizes="54px"
+                style={{ display: "block" }}
+              />
             </div>
             <span
               style={{
                 fontWeight:     800,
-                fontSize:       "15px",
+                fontSize:       "16px",
                 letterSpacing:  "-.02em",
                 color:          "#e8eaf0",
                 whiteSpace:     "nowrap",

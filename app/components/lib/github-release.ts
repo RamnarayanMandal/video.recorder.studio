@@ -1,5 +1,6 @@
 import "server-only";
 
+import { cache } from "react";
 import {
   CHANGELOG_FALLBACK,
   FALLBACK_RELEASE,
@@ -65,7 +66,7 @@ function buildPlatforms(assets: GitHubAsset[], version: string): Record<Platform
   };
 }
 
-export async function getGitHubRelease(): Promise<ReleaseData> {
+export const getGitHubRelease = cache(async (): Promise<ReleaseData> => {
   try {
     const headers: HeadersInit = {
       Accept: "application/vnd.github+json",
@@ -95,6 +96,7 @@ export async function getGitHubRelease(): Promise<ReleaseData> {
         month: "long",
         day: "numeric",
       }),
+      RELEASE_DATE_ISO: release.published_at.slice(0, 10),
       REPO,
       RELEASES_URL: release.html_url,
       DL_BASE: `${REPO}/releases/download/${version}`,
@@ -105,4 +107,4 @@ export async function getGitHubRelease(): Promise<ReleaseData> {
     console.warn(error);
     return FALLBACK_RELEASE;
   }
-}
+});

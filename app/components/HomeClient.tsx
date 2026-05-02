@@ -5,6 +5,7 @@ import AppMock from "./AppMock";
 import Background from "./Background";
 import Changelog from "./Changelog";
 import DownloadSection from "./DownloadSection";
+import FAQ from "./FAQ";
 import Features from "./Features";
 import Footer from "./Footer";
 import Hero from "./Hero";
@@ -86,6 +87,9 @@ export default function HomeClient({ release }: Props) {
 
           <div className="vrs-divider" role="separator" />
           <HowToDownload onDownload={handleDownload} release={release} />
+
+          <div className="vrs-divider" role="separator" />
+          <FAQ />
 
           <div className="vrs-divider" role="separator" />
           <TechStack />

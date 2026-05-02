@@ -66,7 +66,7 @@ export default function Hero({ os, onDownload, release }: Props) {
                 marginBottom:  "18px",
               }}
             >
-              Record
+              Free Screen
               <br />
               <span
                 style={{
@@ -75,7 +75,7 @@ export default function Hero({ os, onDownload, release }: Props) {
                   WebkitTextFillColor:   "transparent",
                 }}
               >
-                Everything.
+                Recorder.
               </span>
               <br />
               <span style={{ color:"#94a3b8", fontSize:".66em", fontWeight:700 }}>
@@ -95,12 +95,11 @@ export default function Hero({ os, onDownload, release }: Props) {
                 fontWeight:   400,
               }}
             >
-              A high-performance desktop screen recorder built with{" "}
-              <strong style={{ color:"#e8eaf0", fontWeight:600 }}>Electron + React</strong>.
-              Screen + webcam recording, floating overlay, live preview, background
-              MP4 conversion — completely{" "}
-              <strong style={{ color:"#e8eaf0", fontWeight:600 }}>free &amp; open-source</strong>,
-              zero watermarks.
+              An <strong style={{ color:"#e8eaf0", fontWeight:600 }}>open-source screen recorder</strong>{" "}
+              for desktop that captures webcam, system audio, and mic without getting in your way.
+              Export MP4 in the background with{" "}
+              <strong style={{ color:"#e8eaf0", fontWeight:600 }}>no watermark</strong>,
+              no account, and no weird limits.
             </p>
 
             {/* Stats */}

@@ -41,6 +41,7 @@ export interface Tech {
 export interface ReleaseData {
   VERSION: string;
   RELEASE_DATE: string;
+  RELEASE_DATE_ISO: string;
   REPO: string;
   RELEASES_URL: string;
   DL_BASE: string;
@@ -106,35 +107,36 @@ export const CHANGELOG_FALLBACK: ChangelogItem[] = [
 ];
 
 export const FALLBACK_RELEASE: ReleaseData = {
-  VERSION: "v1.0.6",
-  RELEASE_DATE: "April 21, 2026",
+  VERSION: "v2.3.6",
+  RELEASE_DATE: "May 3, 2026",
+  RELEASE_DATE_ISO: "2026-05-03",
   REPO,
-  RELEASES_URL: `${REPO}/releases/tag/v1.0.6`,
-  DL_BASE: `${REPO}/releases/download/v1.0.6`,
+  RELEASES_URL: `${REPO}/releases/tag/v2.3.6`,
+  DL_BASE: `${REPO}/releases/download/v2.3.6`,
   PLATFORMS: {
     windows: {
       ...PLATFORM_META.windows,
-      file: "Video-Recorder-Studio-Setup-1.0.6.exe",
+      file: "Video-Recorder-Studio-Setup-2.3.6.exe",
       size: "GitHub asset",
-      downloadUrl: `${REPO}/releases/download/v1.0.6/Video-Recorder-Studio-Setup-1.0.6.exe`,
+      downloadUrl: `${REPO}/releases/download/v2.3.6/Video-Recorder-Studio-Setup-2.3.6.exe`,
     },
     mac: {
       ...PLATFORM_META.mac,
-      file: "Video-Recorder-Studio-1.0.6-arm64.dmg",
+      file: "Video-Recorder-Studio-2.3.6-arm64.dmg",
       size: "GitHub asset",
-      downloadUrl: `${REPO}/releases/download/v1.0.6/Video-Recorder-Studio-1.0.6-arm64.dmg`,
+      downloadUrl: `${REPO}/releases/download/v2.3.6/Video-Recorder-Studio-2.3.6-arm64.dmg`,
     },
     linux: {
       ...PLATFORM_META.linux,
-      file: "Video-Recorder-Studio-1.0.6.AppImage",
+      file: "Video-Recorder-Studio-2.3.6.AppImage",
       size: "GitHub asset",
-      downloadUrl: `${REPO}/releases/download/v1.0.6/Video-Recorder-Studio-1.0.6.AppImage`,
+      downloadUrl: `${REPO}/releases/download/v2.3.6/Video-Recorder-Studio-2.3.6.AppImage`,
     },
   },
   CHANGELOG: CHANGELOG_FALLBACK,
 };
 
-export const { VERSION, RELEASE_DATE, RELEASES_URL, DL_BASE, PLATFORMS, CHANGELOG } = FALLBACK_RELEASE;
+export const { VERSION, RELEASE_DATE, RELEASE_DATE_ISO, RELEASES_URL, DL_BASE, PLATFORMS, CHANGELOG } = FALLBACK_RELEASE;
 
 export function formatBytes(bytes?: number): string {
   if (!bytes) return "GitHub asset";
