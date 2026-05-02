@@ -53,19 +53,51 @@ export const REPO = "https://github.com/RamnarayanMandal/video-recorder-studio";
 export const REPO_API = "https://api.github.com/repos/RamnarayanMandal/video-recorder-studio";
 
 export const FEATURES: Feature[] = [
-  { icon: "screen-webcam", title: "Screen + Webcam", desc: "Record full screen, a specific window, or combine screen and webcam with a live floating preview overlay." },
-  { icon: "audio", title: "Mic + System Audio", desc: "Capture microphone and system sound simultaneously with independent live level meters." },
-  { icon: "visualizer", title: "AI Auto Caption Generator", desc: "Automatically generate subtitles for every recording using built-in AI. No manual transcription." },
-  { icon: "timer", title: "Auto Video Translation", desc: "Translate captions into multiple languages automatically and reach a global audience without extra work." },
-  { icon: "quality", title: "YouTube Shorts & Instagram Reels Export", desc: "Record and export vertical short-form videos optimized for YouTube Shorts and Instagram Reels in one click." },
-  { icon: "storage", title: "No Editing Required", desc: "Record your screen or webcam and publish directly while AI handles captions, translation and formatting." },
-  { icon: "overlay", title: "Floating Overlay UI", desc: "Draggable and resizable glassmorphism control bar, always-on-top and always out of the way." },
-  { icon: "convert", title: "Background MP4 Convert", desc: "FFmpeg encodes in background using veryfast preset. No waiting, UI never freezes." },
-  { icon: "file-size", title: "Live File Size Tracking", desc: "Watch your file grow in real time with the live size indicator during every recording." },
-  { icon: "storage", title: "Smart Storage", desc: "Persistent folder selection, auto-cleanup, and WebM to MP4 background compression." },
-  { icon: "quality", title: "Best Screen Recording Quality", desc: "4K resolution, 60fps frame rate, GPU acceleration on NVIDIA and Intel, and background FFmpeg MP4 conversion." },
-  { icon: "visualizer", title: "Audio Visualization", desc: "Real-time mic level bars so you always know your audio is live before and during recording." },
-  { icon: "timer", title: "Live Recording Timer", desc: "Prominent live timer in the floating overlay so you never lose track of recording length." },
+  {
+    icon: "screen-webcam",
+    title: "Screen + Webcam",
+    desc: "Record full screen, a specific window, or combine screen and webcam with a live floating preview overlay.",
+  },
+  {
+    icon: "audio",
+    title: "Mic + System Audio",
+    desc: "Capture microphone and system sound simultaneously with independent live level meters.",
+  },
+  {
+    icon: "overlay",
+    title: "Floating Overlay UI",
+    desc: "Draggable and resizable glassmorphism control bar, always-on-top and always out of the way.",
+  },
+  {
+    icon: "convert",
+    title: "Background MP4 Convert",
+    desc: "FFmpeg encodes in background using veryfast preset. No waiting, UI never freezes.",
+  },
+  {
+    icon: "file-size",
+    title: "Live File Size Tracking",
+    desc: "Watch your file grow in real time with the live size indicator during every recording.",
+  },
+  {
+    icon: "storage",
+    title: "Smart Storage",
+    desc: "Persistent folder selection, auto-cleanup, and WebM to MP4 background compression.",
+  },
+  {
+    icon: "quality",
+    title: "Quality Controls",
+    desc: "Choose resolution, bitrate, and encoding speed. Supports GPU acceleration on NVIDIA and Intel.",
+  },
+  {
+    icon: "visualizer",
+    title: "Audio Visualization",
+    desc: "Real-time mic level bars so you always know your audio is live before and during recording.",
+  },
+  {
+    icon: "timer",
+    title: "Live Recording Timer",
+    desc: "Prominent live timer in the floating overlay so you never lose track of recording length.",
+  },
 ];
 
 export const TECH: Tech[] = [
@@ -112,8 +144,8 @@ export const CHANGELOG_FALLBACK: ChangelogItem[] = [
 
 export const FALLBACK_RELEASE: ReleaseData = {
   VERSION: "v2.3.6",
-  RELEASE_DATE: "May 3, 2026",
-  RELEASE_DATE_ISO: "2026-05-03",
+  RELEASE_DATE: "May 2, 2026",
+  RELEASE_DATE_ISO: "2026-05-02",
   REPO,
   RELEASES_URL: `${REPO}/releases/tag/v2.3.6`,
   DL_BASE: `${REPO}/releases/download/v2.3.6`,
@@ -121,29 +153,38 @@ export const FALLBACK_RELEASE: ReleaseData = {
     windows: {
       ...PLATFORM_META.windows,
       file: "Video-Recorder-Studio-Setup-2.3.6.exe",
-      size: "GitHub asset",
+      size: "N/A",
       downloadUrl: `${REPO}/releases/download/v2.3.6/Video-Recorder-Studio-Setup-2.3.6.exe`,
     },
     mac: {
       ...PLATFORM_META.mac,
       file: "Video-Recorder-Studio-2.3.6-arm64.dmg",
-      size: "GitHub asset",
+      size: "~109 MB",
       downloadUrl: `${REPO}/releases/download/v2.3.6/Video-Recorder-Studio-2.3.6-arm64.dmg`,
     },
     linux: {
       ...PLATFORM_META.linux,
       file: "Video-Recorder-Studio-2.3.6.AppImage",
-      size: "GitHub asset",
+      size: "~130 MB",
       downloadUrl: `${REPO}/releases/download/v2.3.6/Video-Recorder-Studio-2.3.6.AppImage`,
     },
   },
   CHANGELOG: CHANGELOG_FALLBACK,
 };
 
-export const { VERSION, RELEASE_DATE, RELEASE_DATE_ISO, RELEASES_URL, DL_BASE, PLATFORMS, CHANGELOG } = FALLBACK_RELEASE;
+export const {
+  VERSION,
+  RELEASE_DATE,
+  RELEASE_DATE_ISO,
+  RELEASES_URL,
+  DL_BASE,
+  PLATFORMS,
+  CHANGELOG,
+} = FALLBACK_RELEASE;
 
+// Bug fix: bytes === 0 bhi falsy tha, ab properly handle ho raha hai
 export function formatBytes(bytes?: number): string {
-  if (!bytes) return "GitHub asset";
+  if (bytes === undefined || bytes === null || bytes === 0) return "N/A";
   return `~${Math.round(bytes / 1_048_576)} MB`;
 }
 
@@ -177,38 +218,3 @@ export function triggerDownload(
 
   return `Downloading ${p.label} ${p.ext} - ${p.size}`;
 }
-
-// ── React hook (optional) ─────────────────────
-// Paste this into a separate hooks/useConstants.ts if you use React:
-//
-// import { useState, useEffect } from "react";
-// import { fetchConstants, ResolvedConstants } from "@/lib/constants";
-//
-// export function useConstants() {
-//   const [data, setData]     = useState<ResolvedConstants | null>(null);
-//   const [error, setError]   = useState<string | null>(null);
-//   const [loading, setLoading] = useState(true);
-//
-//   useEffect(() => {
-//     fetchConstants()
-//       .then(setData)
-//       .catch((e) => setError(e.message))
-//       .finally(() => setLoading(false));
-//   }, []);
-//
-//   return { data, error, loading };
-// }
-
-// ── Build-time usage (Node / Vite prebuild) ───
-// In your vite.config.ts or a scripts/prebuild.ts:
-//
-// import { fetchConstants } from "./src/lib/constants";
-// import { writeFileSync }  from "fs";
-//
-// const c = await fetchConstants();
-// writeFileSync(
-//   "src/lib/constants.gen.ts",
-//   `export const VERSION = "${c.VERSION}";\n` +
-//   `export const RELEASE_DATE = "${c.RELEASE_DATE}";\n` +
-//   `export const PLATFORMS = ${JSON.stringify(c.PLATFORMS, null, 2)} as const;\n`
-// );
