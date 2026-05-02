@@ -7,28 +7,20 @@ export const GITHUB_URL = "https://github.com/RamnarayanMandal/video-recorder-st
 export const OG_IMAGE_URL = `${SITE_URL}/og-image.png`;
 export const APP_ICON_URL = `${SITE_URL}/android-chrome-512x512.png`;
 
-export const SEO_TITLE =
-  "Video Recorder Studio - Free Screen Recorder, AI Captions & Short Video Creator";
+export const SEO_TITLE = "Free Screen Recorder for Desktop | Video Recorder Studio";
 export const SEO_DESCRIPTION =
-  "Free AI screen recorder, webcam recorder and video editor for Windows, Mac and Linux. Auto captions, translation, Shorts/Reels, 4K MP4, no watermark.";
+  "Download Video Recorder Studio, a free screen recorder for Windows, macOS and Linux. Capture screen and webcam in 4K 60fps with no watermarks. Get it now.";
 
 export const SEO_KEYWORDS = [
   "free screen recorder",
-  "screen recording software",
-  "video recorder",
-  "webcam recorder",
-  "video editor",
-  "AI captions",
-  "auto translate video",
-  "YouTube Shorts recorder",
-  "Instagram Reels recorder",
-  "short video maker",
-  "electron screen recorder",
-  "screen + webcam recorder",
-  "open source screen recorder desktop",
-  "free OBS alternative",
-  "webcam overlay recorder",
+  "open source screen recorder",
+  "screen and webcam recorder",
   "no watermark screen recorder",
+  "4K 60fps screen recording",
+  "electron screen recorder",
+  "desktop screen recorder",
+  "webcam recorder",
+  "screen recording software",
   "4K screen recorder",
   "Windows screen recorder",
   "Mac screen recorder",
@@ -79,24 +71,24 @@ export function buildSeoMetadata(release: ReleaseData): Metadata {
       type: "website",
       url: SITE_URL,
       siteName: SITE_NAME,
-      title: "Video Recorder Studio - Free AI Screen Recorder & Video Editor",
+      title: SEO_TITLE,
       description:
-        "Record screen, webcam and system audio in 4K. Auto-generate captions, auto-translate, create YouTube Shorts and Instagram Reels from one free app.",
+        "Free, open-source screen and webcam recorder for Windows, macOS and Linux. Record in 4K 60fps with no watermarks.",
       images: [
         {
           url: OG_IMAGE_URL,
           width: 1200,
           height: 630,
-          alt: "Video Recorder Studio screen recorder with AI captions and Shorts support",
+          alt: "Video Recorder Studio desktop screen and webcam recorder preview",
         },
       ],
       locale: "en_US",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Video Recorder Studio - Free AI Screen Recorder",
+      title: SEO_TITLE,
       description:
-        "Free screen recorder with AI captions, auto-translate, YouTube Shorts and Instagram Reels support. Windows, Mac and Linux. No watermarks.",
+        "Record screen and webcam in 4K 60fps with Video Recorder Studio, a free open-source screen recorder with no watermarks.",
       images: [{ url: OG_IMAGE_URL, alt: "Video Recorder Studio app screenshot" }],
     },
     robots: {
