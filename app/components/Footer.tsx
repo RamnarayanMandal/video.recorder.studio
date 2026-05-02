@@ -1,5 +1,5 @@
 // components/Footer.tsx
-import { PlayIcon } from "./icons/Icons";
+import Image from "next/image";
 import { REPO } from "./lib/constants";
 
 const FOOTER_LINKS = [
@@ -41,9 +41,16 @@ export default function Footer() {
               background:   "linear-gradient(135deg,#ef4444,#f97316)",
               display:      "grid",
               placeItems:   "center",
+              overflow:     "hidden",
             }}
           >
-            <PlayIcon />
+            <Image
+              src="/android-chrome-192x192.png"
+              alt=""
+              width={26}
+              height={26}
+              sizes="26px"
+            />
           </div>
           <p
             style={{
@@ -65,6 +72,20 @@ export default function Footer() {
             {" "}· MIT License
           </p>
         </div>
+
+        <p
+          style={{
+            color: "#6b7280",
+            fontSize: "12px",
+            lineHeight: 1.7,
+            maxWidth: "560px",
+          }}
+        >
+          Video Recorder Studio is a free, open-source screen recorder and video editor
+          for Windows, Mac and Linux. Record your screen and webcam in 4K 60fps,
+          auto-generate captions with AI, translate videos automatically, and create
+          YouTube Shorts or Instagram Reels without editing a single frame.
+        </p>
 
         {/* Nav links */}
         <nav aria-label="Footer navigation">

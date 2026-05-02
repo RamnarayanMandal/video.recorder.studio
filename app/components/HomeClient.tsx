@@ -11,6 +11,7 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import HowToDownload from "./HowToDownload";
 import Navbar from "./Navbar";
+import Support from "./Support";
 import TechStack from "./TechStack";
 import Toast from "./Toast";
 import { detectOS, triggerDownload, type PlatformKey, type ReleaseData } from "./lib/constants";
@@ -93,6 +94,9 @@ export default function HomeClient({ release }: Props) {
 
           <div className="vrs-divider" role="separator" />
           <TechStack />
+
+          <div className="vrs-divider" role="separator" />
+          <Support />
         </main>
 
         <div className="vrs-divider" role="separator" />

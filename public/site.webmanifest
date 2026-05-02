@@ -1,7 +1,7 @@
 {
   "name": "Video Recorder Studio",
   "short_name": "VRS",
-  "description": "Free open-source desktop screen and webcam recorder with MP4 exports and no watermark.",
+  "description": "Free screen recorder with AI captions, auto-translate, YouTube Shorts and Instagram Reels support.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -14,8 +14,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#0b0c10",
-  "background_color": "#0b0c10",
+  "theme_color": "#1a1a2e",
+  "background_color": "#1a1a2e",
   "display": "standalone",
   "start_url": "/",
   "scope": "/"

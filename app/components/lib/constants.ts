@@ -55,11 +55,15 @@ export const REPO_API = "https://api.github.com/repos/RamnarayanMandal/video-rec
 export const FEATURES: Feature[] = [
   { icon: "screen-webcam", title: "Screen + Webcam", desc: "Record full screen, a specific window, or combine screen and webcam with a live floating preview overlay." },
   { icon: "audio", title: "Mic + System Audio", desc: "Capture microphone and system sound simultaneously with independent live level meters." },
+  { icon: "visualizer", title: "AI Auto Caption Generator", desc: "Automatically generate subtitles for every recording using built-in AI. No manual transcription." },
+  { icon: "timer", title: "Auto Video Translation", desc: "Translate captions into multiple languages automatically and reach a global audience without extra work." },
+  { icon: "quality", title: "YouTube Shorts & Instagram Reels Export", desc: "Record and export vertical short-form videos optimized for YouTube Shorts and Instagram Reels in one click." },
+  { icon: "storage", title: "No Editing Required", desc: "Record your screen or webcam and publish directly while AI handles captions, translation and formatting." },
   { icon: "overlay", title: "Floating Overlay UI", desc: "Draggable and resizable glassmorphism control bar, always-on-top and always out of the way." },
   { icon: "convert", title: "Background MP4 Convert", desc: "FFmpeg encodes in background using veryfast preset. No waiting, UI never freezes." },
   { icon: "file-size", title: "Live File Size Tracking", desc: "Watch your file grow in real time with the live size indicator during every recording." },
   { icon: "storage", title: "Smart Storage", desc: "Persistent folder selection, auto-cleanup, and WebM to MP4 background compression." },
-  { icon: "quality", title: "Quality Controls", desc: "Choose resolution, bitrate, and encoding speed. Supports GPU acceleration on NVIDIA and Intel." },
+  { icon: "quality", title: "Best Screen Recording Quality", desc: "4K resolution, 60fps frame rate, GPU acceleration on NVIDIA and Intel, and background FFmpeg MP4 conversion." },
   { icon: "visualizer", title: "Audio Visualization", desc: "Real-time mic level bars so you always know your audio is live before and during recording." },
   { icon: "timer", title: "Live Recording Timer", desc: "Prominent live timer in the floating overlay so you never lose track of recording length." },
 ];

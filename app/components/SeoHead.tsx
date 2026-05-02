@@ -7,25 +7,40 @@ export const GITHUB_URL = "https://github.com/RamnarayanMandal/video-recorder-st
 export const OG_IMAGE_URL = `${SITE_URL}/og-image.png`;
 export const APP_ICON_URL = `${SITE_URL}/android-chrome-512x512.png`;
 
-export const SEO_TITLE = "Free Screen Recorder for Desktop | Video Recorder Studio";
+export const SEO_TITLE =
+  "Video Recorder Studio - Free Screen Recorder, AI Captions & Short Video Creator";
 export const SEO_DESCRIPTION =
-  "Free open-source screen recorder for desktop. Capture screen, webcam, and audio, convert WebM to MP4, and export with no watermark.";
+  "Free AI screen recorder, webcam recorder and video editor for Windows, Mac and Linux. Auto captions, translation, Shorts/Reels, 4K MP4, no watermark.";
 
 export const SEO_KEYWORDS = [
   "free screen recorder",
+  "screen recording software",
+  "video recorder",
+  "webcam recorder",
+  "video editor",
+  "AI captions",
+  "auto translate video",
+  "YouTube Shorts recorder",
+  "Instagram Reels recorder",
+  "short video maker",
   "electron screen recorder",
   "screen + webcam recorder",
   "open source screen recorder desktop",
   "free OBS alternative",
   "webcam overlay recorder",
   "no watermark screen recorder",
+  "4K screen recorder",
+  "Windows screen recorder",
+  "Mac screen recorder",
+  "Linux screen recorder",
+  "auto caption generator",
   "desktop screen recorder",
   "MP4 screen recorder",
   "system audio screen recorder",
 ];
 
 export const viewport: Viewport = {
-  themeColor: "#0b0c10",
+  themeColor: "#1a1a2e",
   colorScheme: "dark",
 };
 
@@ -64,23 +79,25 @@ export function buildSeoMetadata(release: ReleaseData): Metadata {
       type: "website",
       url: SITE_URL,
       siteName: SITE_NAME,
-      title: "Free Screen Recorder with Webcam Overlay | Video Recorder Studio",
-      description,
+      title: "Video Recorder Studio - Free AI Screen Recorder & Video Editor",
+      description:
+        "Record screen, webcam and system audio in 4K. Auto-generate captions, auto-translate, create YouTube Shorts and Instagram Reels from one free app.",
       images: [
         {
           url: OG_IMAGE_URL,
           width: 1200,
           height: 630,
-          alt: "Video Recorder Studio desktop screen and webcam recorder preview",
+          alt: "Video Recorder Studio screen recorder with AI captions and Shorts support",
         },
       ],
       locale: "en_US",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Free Screen Recorder with Webcam Overlay",
-      description,
-      images: [OG_IMAGE_URL],
+      title: "Video Recorder Studio - Free AI Screen Recorder",
+      description:
+        "Free screen recorder with AI captions, auto-translate, YouTube Shorts and Instagram Reels support. Windows, Mac and Linux. No watermarks.",
+      images: [{ url: OG_IMAGE_URL, alt: "Video Recorder Studio app screenshot" }],
     },
     robots: {
       index: true,
@@ -95,6 +112,7 @@ export function buildSeoMetadata(release: ReleaseData): Metadata {
     },
     other: {
       author: "Ramnarayan Mandal",
+      "msapplication-TileColor": "#1a1a2e",
       "software-version": release.VERSION,
       "release-date": release.RELEASE_DATE_ISO,
       "github-repository": GITHUB_URL,

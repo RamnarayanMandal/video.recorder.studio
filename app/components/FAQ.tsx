@@ -4,14 +4,29 @@ import { useState } from "react";
 
 const FAQS = [
   {
-    question: "Is Video Recorder Studio really free with no watermark?",
+    question: "Is Video Recorder Studio free?",
     answer:
-      "Yes. Video Recorder Studio is a free screen recorder and open-source desktop app with no watermark, no trial countdown, and no paid export lock.",
+      "Yes. Video Recorder Studio is completely free and open-source under the MIT license. No watermarks, no subscription, no account required.",
   },
   {
-    question: "Does this free screen recorder work on Windows 11?",
+    question: "Does Video Recorder Studio work on Windows, Mac and Linux?",
     answer:
-      "Yes. The Windows build supports Windows 10 and Windows 11 on 64-bit PCs, with installers fetched from the latest GitHub release.",
+      "Yes. Video Recorder Studio supports Windows 10/11, macOS 12 and above, and Linux distributions including Ubuntu 20.04+, Debian 11+, and Fedora 35+.",
+  },
+  {
+    question: "Can it auto-generate captions and translate videos?",
+    answer:
+      "Yes. Video Recorder Studio includes AI-powered automatic caption generation and auto-translation so you can publish videos in multiple languages without manual editing.",
+  },
+  {
+    question: "Can I create YouTube Shorts and Instagram Reels without editing?",
+    answer:
+      "Yes. The app includes short video creation for YouTube Shorts and Instagram Reels so you can record and publish vertical short-form content without manual video editing.",
+  },
+  {
+    question: "What is the maximum recording quality?",
+    answer:
+      "Video Recorder Studio supports up to 4K resolution at 60fps with GPU acceleration support for NVIDIA and Intel graphics cards.",
   },
   {
     question: "Can it record system audio and microphone at the same time?",
@@ -22,11 +37,6 @@ const FAQS = [
     question: "What format does it record in: WebM or MP4?",
     answer:
       "Video Recorder Studio records efficiently to WebM first, then uses FFmpeg to convert WebM to MP4 in the background so the final file is easy to edit and share.",
-  },
-  {
-    question: "Does Video Recorder Studio need internet access to record?",
-    answer:
-      "No. Recording works offline on your desktop. Internet access is only needed to download the app, check GitHub releases, or fetch updates.",
   },
   {
     question: "How is it different from OBS as a free OBS alternative?",
@@ -42,6 +52,11 @@ const FAQS = [
     question: "Where are screen recordings saved?",
     answer:
       "Recordings are saved to the folder you choose in the desktop app. The selected location is remembered so future screen, webcam, and audio recordings stay organized.",
+  },
+  {
+    question: "Does Video Recorder Studio need internet access to record?",
+    answer:
+      "No. Recording works offline on your desktop. Internet access is only needed to download the app, check GitHub releases, or fetch updates.",
   },
 ];
 

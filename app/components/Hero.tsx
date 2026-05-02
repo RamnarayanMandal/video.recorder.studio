@@ -66,7 +66,7 @@ export default function Hero({ os, onDownload, release }: Props) {
                 marginBottom:  "18px",
               }}
             >
-              Free Screen
+              Record Everything.
               <br />
               <span
                 style={{
@@ -75,11 +75,11 @@ export default function Hero({ os, onDownload, release }: Props) {
                   WebkitTextFillColor:   "transparent",
                 }}
               >
-                Recorder.
+                No editing
               </span>
               <br />
               <span style={{ color:"#94a3b8", fontSize:".66em", fontWeight:700 }}>
-                No limits.
+                needed.
               </span>
             </h1>
 
@@ -95,11 +95,10 @@ export default function Hero({ os, onDownload, release }: Props) {
                 fontWeight:   400,
               }}
             >
-              An <strong style={{ color:"#e8eaf0", fontWeight:600 }}>open-source screen recorder</strong>{" "}
-              for desktop that captures webcam, system audio, and mic without getting in your way.
-              Export MP4 in the background with{" "}
-              <strong style={{ color:"#e8eaf0", fontWeight:600 }}>no watermark</strong>,
-              no account, and no weird limits.
+              The free all-in-one screen recorder, webcam recorder and video editor for{" "}
+              <strong style={{ color:"#e8eaf0", fontWeight:600 }}>Windows, Mac &amp; Linux</strong>.
+              AI auto-captions, auto-translate, YouTube Shorts and Instagram Reels with{" "}
+              <strong style={{ color:"#e8eaf0", fontWeight:600 }}>zero watermarks</strong>.
             </p>
 
             {/* Stats */}

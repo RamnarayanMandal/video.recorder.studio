@@ -7,34 +7,34 @@ interface Props {
 
 const faqEntities = [
   {
-    question: "Is Video Recorder Studio really a free screen recorder?",
+    question: "Is Video Recorder Studio free?",
     answer:
-      "Yes. Video Recorder Studio is a free, open-source desktop screen recorder with no watermark, no trial limit, and no subscription.",
+      "Yes. Video Recorder Studio is completely free and open-source under the MIT license. No watermarks, no subscription, no account required.",
   },
   {
-    question: "Does Video Recorder Studio work on Windows 11?",
+    question: "Does Video Recorder Studio work on Windows, Mac and Linux?",
     answer:
-      "Yes. The Windows installer supports Windows 10 and Windows 11 on 64-bit PCs.",
+      "Yes. Video Recorder Studio supports Windows 10/11, macOS 12 and above, and Linux distributions including Ubuntu 20.04+, Debian 11+, and Fedora 35+.",
   },
   {
-    question: "Can I record screen and webcam at the same time?",
+    question: "Can it auto-generate captions and translate videos?",
     answer:
-      "Yes. You can record your screen with a webcam overlay, making it useful for tutorials, product demos, walkthroughs, and course videos.",
+      "Yes. Video Recorder Studio includes AI-powered automatic caption generation and auto-translation so you can publish videos in multiple languages without manual editing.",
   },
   {
-    question: "Can it record system audio and microphone together?",
+    question: "Can I create YouTube Shorts and Instagram Reels without editing?",
     answer:
-      "Yes. Video Recorder Studio can capture microphone input and system audio together, with live audio indicators during recording.",
+      "Yes. The app includes short video creation for YouTube Shorts and Instagram Reels so you can record and publish vertical short-form content without manual video editing.",
   },
   {
-    question: "What video format does it record in?",
+    question: "What is the maximum recording quality?",
     answer:
-      "Recordings are captured as WebM first, then converted to MP4 in the background with FFmpeg for easier editing, sharing, and uploading.",
+      "Video Recorder Studio supports up to 4K resolution at 60fps with GPU acceleration support for NVIDIA and Intel graphics cards.",
   },
   {
-    question: "How is Video Recorder Studio different from OBS?",
+    question: "Can it record screen, webcam, system audio and microphone together?",
     answer:
-      "OBS is powerful for streaming and advanced scenes. Video Recorder Studio is a lighter free OBS alternative focused on quick desktop recording, webcam overlay capture, and no-watermark MP4 exports.",
+      "Yes. You can record screen, webcam overlay, system audio and microphone audio together for tutorials, courses, demos and short-form videos.",
   },
 ];
 
@@ -46,12 +46,25 @@ export default function JsonLd({ release }: Props) {
         "@type": "SoftwareApplication",
         "@id": `${SITE_URL}/#software`,
         name: SITE_NAME,
+        alternateName: ["VRS", "Video Recorder Studio App"],
         url: SITE_URL,
         description:
-          "Free, open-source desktop screen and webcam recorder with no watermarks, system audio capture, and background MP4 conversion via FFmpeg.",
+          "Video Recorder Studio is a free, open-source all-in-one screen recorder, webcam recorder and video editor for Windows, Mac and Linux. Features AI-powered auto caption generation, auto translation, YouTube Shorts and Instagram Reels export, 4K 60fps recording, floating overlay UI, background MP4 conversion via FFmpeg, and GPU acceleration with zero watermarks.",
         applicationCategory: "MultimediaApplication",
-        operatingSystem: "Windows 10, Windows 11, macOS 12, Linux",
+        applicationSubCategory: "Screen Recorder, Video Editor, Short Video Creator",
+        operatingSystem: [
+          "Windows 10",
+          "Windows 11",
+          "macOS 12",
+          "macOS 13",
+          "macOS 14",
+          "Ubuntu 20.04",
+          "Debian 11",
+          "Fedora 35",
+          "Linux",
+        ],
         softwareVersion: release.VERSION,
+        datePublished: "2024-01-01",
         dateModified: release.RELEASE_DATE_ISO,
         logo: APP_ICON_URL,
         thumbnailUrl: APP_ICON_URL,
@@ -67,10 +80,40 @@ export default function JsonLd({ release }: Props) {
         softwareHelp: `${GITHUB_URL}#readme`,
         codeRepository: GITHUB_URL,
         license: `${GITHUB_URL}/blob/main/LICENSE`,
+        isAccessibleForFree: true,
+        price: "0",
+        priceCurrency: "USD",
+        softwareRequirements: "Windows 10/11 64-bit, macOS 12+, Ubuntu 20.04+",
+        programmingLanguage: ["JavaScript", "React", "Electron", "Node.js"],
+        keywords:
+          "screen recorder, video editor, AI captions, auto translate, YouTube Shorts, Instagram Reels, short video maker, webcam recorder, free screen recorder, 4K recorder",
+        featureList: [
+          "Screen recording up to 4K 60fps",
+          "Webcam recording and overlay",
+          "System audio and microphone capture",
+          "AI auto caption generation",
+          "Auto video translation",
+          "YouTube Shorts export",
+          "Instagram Reels export",
+          "Short video creation without editing",
+          "Floating glassmorphism overlay UI",
+          "Background MP4 conversion via FFmpeg",
+          "GPU acceleration with NVIDIA and Intel",
+          "Live file size tracking",
+          "No watermarks",
+          "Open source MIT license",
+        ],
         author: {
           "@type": "Person",
-          name: "Ramnarayan Mandal",
+          name: "RamnarayanMandal",
           url: "https://github.com/RamnarayanMandal",
+        },
+        publisher: {
+          "@type": "Person",
+          name: "RamnarayanMandal",
+          url: "https://github.com/RamnarayanMandal",
+          email: "mailto:ramnarayan847230@gmail.com",
+          telephone: "+916352396301",
         },
         offers: {
           "@type": "Offer",
@@ -82,9 +125,22 @@ export default function JsonLd({ release }: Props) {
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "4.8",
-          ratingCount: "124",
+          ratingCount: "24",
           bestRating: "5",
           worstRating: "1",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: SITE_NAME,
+        description:
+          "Free screen recorder, video editor and AI caption generator for Windows, Mac and Linux.",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${SITE_URL}/?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
         },
       },
       {

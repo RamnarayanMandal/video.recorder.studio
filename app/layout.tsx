@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import JsonLd from "./components/JsonLd";
 import { buildSeoMetadata, viewport } from "./components/SeoHead";
 import { getGitHubRelease } from "./components/lib/github-release";
@@ -9,6 +9,11 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
 });
 
 export const dynamic = "force-dynamic";
@@ -28,7 +33,10 @@ export default async function RootLayout({
   const release = await getGitHubRelease();
 
   return (
-    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
+    <html lang="en" className={`${poppins.variable} ${inter.variable} h-full antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://github.com" />
+      </head>
       <body className="min-h-full flex flex-col">
         <JsonLd release={release} />
         {children}
