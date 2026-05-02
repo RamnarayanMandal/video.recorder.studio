@@ -87,15 +87,13 @@ export default function JsonLd({ release }: Props) {
         ],
         author: {
           "@type": "Person",
-          name: "RamnarayanMandal",
+          name: "Ramnarayan Mandal",
           url: "https://github.com/RamnarayanMandal",
         },
         publisher: {
           "@type": "Person",
-          name: "RamnarayanMandal",
+          name: "Ramnarayan Mandal",
           url: "https://github.com/RamnarayanMandal",
-          email: "mailto:ramnarayan847230@gmail.com",
-          telephone: "+916352396301",
         },
         offers: {
           "@type": "Offer",
@@ -103,13 +101,6 @@ export default function JsonLd({ release }: Props) {
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
           url: SITE_URL,
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.8",
-          ratingCount: "24",
-          bestRating: "5",
-          worstRating: "1",
         },
       },
       {
@@ -119,6 +110,14 @@ export default function JsonLd({ release }: Props) {
         name: SITE_NAME,
         description:
           "Free open-source screen and webcam recorder for Windows, macOS and Linux.",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${GITHUB_URL}/issues?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
       },
       {
         "@type": "FAQPage",
