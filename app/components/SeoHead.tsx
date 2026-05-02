@@ -41,6 +41,9 @@ export function buildSeoMetadata(release: ReleaseData): Metadata {
 
   return {
     metadataBase: new URL(SITE_URL),
+     verification: {
+      google: "u29tTL78RoIEw8rVx6DKagPpTxflPUxeeR0VZp5VnQk",
+    },
     title: {
       default: SEO_TITLE,
       template: `%s | ${SITE_NAME}`,

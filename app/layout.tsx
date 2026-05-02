@@ -35,7 +35,6 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable} h-full antialiased`}>
       <head>
-        <meta name="google-site-verification" content="u29tTL78RoIEw8rVx6DKagPpTxflPUxeeR0VZp5VnQk" />
         <link rel="preconnect" href="https://github.com" />
       </head>
       <body className="min-h-full flex flex-col">
