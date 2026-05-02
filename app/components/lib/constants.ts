@@ -171,3 +171,38 @@ export function triggerDownload(
 
   return `Downloading ${p.label} ${p.ext} - ${p.size}`;
 }
+
+// ── React hook (optional) ─────────────────────
+// Paste this into a separate hooks/useConstants.ts if you use React:
+//
+// import { useState, useEffect } from "react";
+// import { fetchConstants, ResolvedConstants } from "@/lib/constants";
+//
+// export function useConstants() {
+//   const [data, setData]     = useState<ResolvedConstants | null>(null);
+//   const [error, setError]   = useState<string | null>(null);
+//   const [loading, setLoading] = useState(true);
+//
+//   useEffect(() => {
+//     fetchConstants()
+//       .then(setData)
+//       .catch((e) => setError(e.message))
+//       .finally(() => setLoading(false));
+//   }, []);
+//
+//   return { data, error, loading };
+// }
+
+// ── Build-time usage (Node / Vite prebuild) ───
+// In your vite.config.ts or a scripts/prebuild.ts:
+//
+// import { fetchConstants } from "./src/lib/constants";
+// import { writeFileSync }  from "fs";
+//
+// const c = await fetchConstants();
+// writeFileSync(
+//   "src/lib/constants.gen.ts",
+//   `export const VERSION = "${c.VERSION}";\n` +
+//   `export const RELEASE_DATE = "${c.RELEASE_DATE}";\n` +
+//   `export const PLATFORMS = ${JSON.stringify(c.PLATFORMS, null, 2)} as const;\n`
+// );
