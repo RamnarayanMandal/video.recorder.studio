@@ -113,7 +113,7 @@ const PLATFORM_META: Record<PlatformKey, Omit<Platform, "file" | "size" | "downl
   windows: {
     label: "Windows",
     icon: "windows",
-    ext: ".exe",
+    ext: ".Setup",
     color: "#3b9eff",
     hint: "Windows 10 / 11, 64-bit",
   },

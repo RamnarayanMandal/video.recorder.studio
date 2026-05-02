@@ -45,15 +45,29 @@ function parseChangelog(body: string | null): ChangelogItem[] {
 function buildPlatforms(assets: GitHubAsset[], version: string): Record<PlatformKey, Platform> {
   const meta = getPlatformMeta();
 
-  const findAsset = (ext: string) =>
-    assets.find((asset) => asset.name.toLowerCase().endsWith(ext.toLowerCase()));
+  const findAsset = (key: PlatformKey): GitHubAsset | undefined => {
+    if (key === "windows") {
+      return (
+        assets.find((a) =>
+          a.name.toLowerCase().includes("setup") &&
+          a.name.toLowerCase().endsWith(".exe")
+        ) ??
+        assets.find((a) =>
+          a.name.toLowerCase().endsWith(".exe") &&
+          !a.name.toLowerCase().includes("elevate") &&
+          !a.name.toLowerCase().includes("ffmpeg")
+        )
+      );
+    }
+    if (key === "mac") return assets.find((a) => a.name.toLowerCase().endsWith(".dmg"));
+    if (key === "linux") return assets.find((a) => a.name.toLowerCase().endsWith(".appimage"));
+  };
 
   const resolve = (key: PlatformKey): Platform => {
-    const asset = findAsset(meta[key].ext);
-
+    const asset = findAsset(key);
     return {
       ...meta[key],
-      file: asset?.name ?? `No ${meta[key].ext} asset in ${version}`,
+      file: asset?.name ?? `No installer found for ${key} in ${version}`,
       size: formatBytes(asset?.size),
       downloadUrl: asset?.browser_download_url ?? "#",
     };
