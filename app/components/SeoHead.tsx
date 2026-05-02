@@ -25,10 +25,11 @@ export const SEO_KEYWORDS = [
   "Windows screen recorder",
   "Mac screen recorder",
   "Linux screen recorder",
-  "auto caption generator",
-  "desktop screen recorder",
   "MP4 screen recorder",
   "system audio screen recorder",
+  "floating overlay recorder",
+  "background MP4 converter",
+  "free webcam recorder software",
 ];
 
 export const viewport: Viewport = {
@@ -37,18 +38,13 @@ export const viewport: Viewport = {
 };
 
 export function buildSeoMetadata(release: ReleaseData): Metadata {
-  const description = SEO_DESCRIPTION;
-
   return {
     metadataBase: new URL(SITE_URL),
-     verification: {
-      google: "u29tTL78RoIEw8rVx6DKagPpTxflPUxeeR0VZp5VnQk",
-    },
     title: {
       default: SEO_TITLE,
       template: `%s | ${SITE_NAME}`,
     },
-    description,
+    description: SEO_DESCRIPTION,
     keywords: SEO_KEYWORDS,
     authors: [{ name: "Ramnarayan Mandal", url: "https://github.com/RamnarayanMandal" }],
     creator: "Ramnarayan Mandal",
@@ -56,6 +52,9 @@ export function buildSeoMetadata(release: ReleaseData): Metadata {
     applicationName: SITE_NAME,
     category: "technology",
     manifest: "/site.webmanifest",
+    verification: {
+      google: "u29tTL78RoIEw8rVx6DKagPpTxflPUxeeR0VZp5VnQk",
+    },
     icons: {
       icon: [
         { url: "/favicon.ico", sizes: "any" },
